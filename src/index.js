@@ -46,15 +46,14 @@ export default class AclSwagger extends Acl {
   constructor(opts={}) {
 
     const storeType = opts.store && opts.store.type || 'memory'
-    const dbInstance = opts.store && opts.store.client || null
-    const prefix = opts.store && opts.store.prefix || null
+    const storeOptions = opts.store && opts.store.options || null
     const backEnd = {
       'redis': redisBackend,
       'mongodb': mongodbBackend,
       'memory': memoryBackend
     }[storeType] || memoryBackend
 
-    super(new backEnd(dbInstance, prefix))
+    super(new backEnd(storeOptions))
 
     opts.api = opts.api || {dir: '', skip: 0}
     if (!fs.existsSync(opts.api.dir)) {
