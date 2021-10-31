@@ -1,4 +1,4 @@
-import Acl from 'acl'
+import Acl from 'acl2'
 
 import {promisifyAll} from 'bluebird'
 

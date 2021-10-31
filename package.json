@@ -1,5 +1,5 @@
 {
-  "name": "koa-acl-swagger",
+  "name": "koa-acl2-swagger",
   "description": "a role base access controller and working with swagger",
   "version": "0.0.6",
   "main": "lib/index.js",
@@ -34,7 +34,7 @@
   "author": "air-cc <c989692c@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "acl": "^0.4.9",
+    "acl2": "^2.0.1",
     "bluebird": "^3.4.6",
     "debug": "^2.3.2",
     "swagger-parser": "^3.4.1"
