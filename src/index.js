@@ -90,7 +90,7 @@ export default class AclSwagger extends Acl {
     if (this.filter && !this.filter(url, method))
       return next()
 
-    url = '/' + url.split('?')[0].split('/').slice(this.apiSkip).join('/')
+    url = '/' + url.split('?')[0].split('/').slice(this.apiSkip).filter((x) => x).join('/')
 
     const resource = this.getItemByURL('x-resource', url, method)
     debug(`get resource ${resource} type`, typeof resource)

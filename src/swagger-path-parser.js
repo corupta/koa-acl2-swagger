@@ -8,7 +8,7 @@ export default class swaggerPathParser {
   }
 
   decompose(path) {
-    const arr = path.split('/').slice(1)
+    const arr = path.split('/').slice(1).filter((x) => x)
 
     const len = arr.length
     const keyRe = '\\/[\\w|\\-|%]+'
